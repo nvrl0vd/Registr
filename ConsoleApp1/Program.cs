@@ -12,43 +12,43 @@ namespace ConsoleApp1
         {
             string Sx = null;
             string Command = null;
-            
-            Console.WriteLine();
+
+            string[] Data = new string[7];
 
             Console.Write("Введите Фамилию: ");
             Console.ForegroundColor = ConsoleColor.Red;
-            string SurName = Console.ReadLine();
+            Data[0] = Console.ReadLine();
             Console.ResetColor();
 
             Console.Write("Введите имя: ");
             Console.ForegroundColor = ConsoleColor.Red;
-            string FirstName = Console.ReadLine();
+            Data[1] = Console.ReadLine();
             Console.ResetColor();
 
             Console.Write("Введите Отчетство: ");
             Console.ForegroundColor = ConsoleColor.Red;
-            string LastName = Console.ReadLine();
+            Data[2] = Console.ReadLine();
             Console.ResetColor();
 
             Console.Write("Введите свой e-mail: ");
             Console.ForegroundColor = ConsoleColor.Red;
-            string Mail = Console.ReadLine();
+            Data[3] = Console.ReadLine();
             Console.ResetColor();
         BackToSx:
 
             Console.Write("Выберите пол(М/Ж): ");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Sx = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Data[4] = Console.ReadLine();
             Console.ResetColor();
 
-            switch (Sx)
+            switch (Data[4])
             {
 
                 case "М":
-                    Sx = "Мужской";
+                    Data[4] = "Мужской";
                     break;
                 case "Ж":
-                    Sx = "Женский";
+                    Data[4] = "Женский";
                     break;
                 default:
                     Console.WriteLine("Третьего не дано.");
@@ -58,17 +58,17 @@ namespace ConsoleApp1
       
             Console.Write("Введите свой login: ");
             Console.ForegroundColor = ConsoleColor.Red;
-            string Lgin  = Console.ReadLine();
+            Data[5] = Console.ReadLine();
             Console.ResetColor();
 
             Console.Write("Введите свой пароль: ");
             Console.ForegroundColor = ConsoleColor.Red;
-            string Pswrd = Console.ReadLine();
+            Data[6] = Console.ReadLine();
             Console.ResetColor();
         BackToCm:
 
             Console.Write("Вывести данные? (Введите Да/Нет) ");
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Command = Console.ReadLine();
             Console.ResetColor();
 
@@ -78,7 +78,7 @@ namespace ConsoleApp1
             switch (Command)
             {
                 case "Да":
-                    Console.WriteLine($"Ваше имя: {SurName} {FirstName}, Ваш пол: {Sx}, Ваш e-mail: {Mail}, Ваш логин: {Lgin}");
+                    Console.WriteLine($"Ваше имя: {Data[0]} {Data[1]} {Data[2]} , Ваш пол: {Data[4]}, Ваш e-mail: {Data[3]}, Ваш логин: {Data[5]}");
                     break;
                 case "Нет":
                     Console.WriteLine("Ок :(");
